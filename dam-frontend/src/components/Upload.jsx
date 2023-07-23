@@ -83,7 +83,9 @@ export default function Upload() {
     formData.append("tag", predictedClass);
     await axios
       .post(`http://localhost:8080/upload`, formData)
-      .then((res) => {})
+      .then((res) => {
+        toast("Image uploaded successfully");
+      })
       .catch((err) => {
         toast(err.response.data.message);
       });
